@@ -1,0 +1,20 @@
+{% extends "turbo_framez/base.html" %}
+
+{% block content %}
+
+  <div class="w-full max-w-7xl mx-auto px-4">
+
+    <h1 class="text-4xl sm:text-6xl lg:text-7xl mb-6">Turbo Frame Index Page</h1>
+
+  <div class="mb-4">
+    <turbo-frame id="task-create" src="{% url 'turbo-frame:task-create' %}">
+      Loading...
+    </turbo-frame>
+  </div>
+
+  <turbo-frame id="task-list" src="{% url 'turbo-frame:task-list' %}">
+    Loading...
+  </turbo-frame>
+  </div>
+
+{% endblock %}

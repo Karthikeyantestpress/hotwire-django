@@ -1,0 +1,20 @@
+{% load crispy_forms_tags %}
+
+<form method="post" action="{% url 'turbo-frame:task-delete' instance.pk %}">
+  {% csrf_token %}
+
+  <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+    Are you sure you want to delete "{{ instance.title }}"?
+  </div>
+
+  {{ form|crispy }}
+
+  <button type="submit" class="btn-blue">Submit</button>
+
+  {% if request.turbo.frame %}
+    <a href="{% url 'turbo-frame:task-detail' instance.pk %}" class="btn-red">Cancel</a>
+  {% else %}
+    <a href="{% url 'turbo-frame:task-list' %}" class="btn-red">Cancel</a>
+  {% endif %}
+
+</form>

@@ -21,5 +21,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('', TemplateView.as_view(template_name="index.html")),
     path('turbo-drive/', include('hotwire_django_app.turbo_drive.urls')),
+    path('turbo-frame/', include('hotwire_django_app.turbo_framez.urls')),
+    path('stimulus-basic/', include('hotwire_django_app.stimulus_basics.urls')),            
     path('admin/', admin.site.urls),
 ]

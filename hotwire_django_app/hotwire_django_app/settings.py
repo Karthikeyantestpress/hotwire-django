@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'hotwire_django_app.tasks',
     'hotwire_django_app.turbo_drive',
     'crispy_forms',                     
-    'crispy_tailwind', 
+    'crispy_tailwind',
+    'hotwire_django_app.turbo_framez',
+    'hotwire_django_app.stimulus_basics',
+    'turbo_response',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
@@ -49,6 +52,7 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'turbo_response.middleware.TurboMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

@@ -1,0 +1,20 @@
+{% extends "turbo_framez/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="w-full max-w-7xl mx-auto px-4">
+
+  <h1 class="text-4xl sm:text-6xl lg:text-7xl mb-6">Create Task</h1>
+
+  {% if request.turbo.frame == "task-create" %}
+  <turbo-frame id="task-create">
+    {% include 'turbo_framez/form/create.html' %}
+  </turbo-frame>
+   {% else %}
+     {% include 'turbo_framez/form/create.html' %}
+  {% endif %}
+
+</div>
+
+{% endblock %}

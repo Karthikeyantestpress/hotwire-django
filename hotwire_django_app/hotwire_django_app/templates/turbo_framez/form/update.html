@@ -1,0 +1,17 @@
+{% load crispy_forms_tags %}
+
+<form method="post" action="{% url 'turbo-frame:task-update' form.instance.pk %}">
+
+  {% csrf_token %}
+
+  {{ form|crispy }}
+
+  <button type="submit" class="btn-blue">Submit</button>
+
+  {% if request.turbo.frame %}
+    <a href="{% url 'turbo-frame:task-detail' form.instance.pk %}" class="btn-red">Cancel</a>
+  {% else %}
+    <a href="{% url 'turbo-frame:task-list' %}" class="btn-red">Cancel</a>
+  {% endif %}
+
+</form>
